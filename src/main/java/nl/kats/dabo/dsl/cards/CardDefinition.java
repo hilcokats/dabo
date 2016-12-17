@@ -6,8 +6,8 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 
 import nl.kats.dabo.dsl.ActionContext;
 import nl.kats.dabo.dsl.CardPools;
-import nl.kats.dabo.play.IconList;
-import nl.kats.dabo.play.KeywordList;
+import nl.kats.dabo.dsl.IconList;
+import nl.kats.dabo.dsl.KeywordList;
 
 public abstract class CardDefinition<T extends CardType> implements CardType, Collectable<T> {
 

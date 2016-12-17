@@ -5,8 +5,8 @@ import nl.kats.dabo.dsl.cards.Skilled;
 import nl.kats.dabo.dsl.cards.Taxoned;
 import nl.kats.dabo.dsl.enums.Keyword;
 import nl.kats.dabo.dsl.enums.Skill;
-import nl.kats.dabo.play.SkillList;
-import nl.kats.dabo.play.SpeciesList;
+import nl.kats.dabo.dsl.SkillList;
+import nl.kats.dabo.dsl.SpeciesList;
 
 public class PersonnelDefinition extends AffiliatedCardDefinition<PersonnelType>
 		implements PersonnelType {

@@ -4,7 +4,7 @@ import nl.kats.dabo.dsl.cards.AffiliatedCardDefinition;
 import nl.kats.dabo.dsl.cards.Classified;
 import nl.kats.dabo.dsl.cards.StaffingRequirement;
 import nl.kats.dabo.dsl.enums.Classification;
-import nl.kats.dabo.play.StaffingRequirementList;
+import nl.kats.dabo.dsl.StaffingRequirementList;
 
 public class ShipDefinition extends AffiliatedCardDefinition<ShipType>
         implements ShipType {

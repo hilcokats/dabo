@@ -3,7 +3,7 @@ package nl.kats.dabo;
 import junit.framework.Assert;
 import nl.kats.dabo.dsl.cards.CardDefinition;
 import nl.kats.dabo.expansions.CardBuilder;
-import nl.kats.dabo.play.CardCatalog;
+import nl.kats.dabo.dsl.CardCatalog;
 import org.junit.Test;
 
 import java.io.File;
@@ -29,8 +29,7 @@ public class CardTest {
         int assertionsFailed = 0;
 
         for (Class clazz : classes) {
-            CardBuilder.catalog = new CardCatalog() {
-            };
+            CardCatalog.CARDS = new CardCatalog();
 
             try {
                 if (CardBuilder.class.isAssignableFrom(clazz) && !Modifier.isAbstract(clazz.getModifiers()) && !clazz.isInterface()) {
@@ -41,14 +40,14 @@ public class CardTest {
                         CardBuilder cardBuilder = (CardBuilder) object;
                         cardBuilder.build();
 
-                        if (CardBuilder.catalog.isEmpty()) {
+                        if (CardCatalog.CARDS.isEmpty()) {
                             assertionsFailed++;
                             System.err.println(clazz.getCanonicalName() + ": NOK - Build method does not add a card to the catalog");
-                        } else if (CardBuilder.catalog.size() > 1) {
+                        } else if (CardCatalog.CARDS.size() > 1) {
                             assertionsFailed++;
                             System.err.println(clazz.getCanonicalName() + ": NOK - Build method adds more than one card to the catalog");
                         } else {
-                            CardDefinition card = CardBuilder.catalog.iterator().next();
+                            CardDefinition card = CardCatalog.CARDS.iterator().next();
 
                             String cardTitle = (card.getTitle() + ", " + card.getSubtitle()).toLowerCase();
                             String collectorId = card.getCollectorsId();

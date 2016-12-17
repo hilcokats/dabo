@@ -1,4 +1,4 @@
-package nl.kats.dabo.play;
+package nl.kats.dabo.dsl;
 
 import java.util.ArrayList;
 

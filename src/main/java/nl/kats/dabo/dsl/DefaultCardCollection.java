@@ -1,9 +1,8 @@
-package nl.kats.dabo.play;
+package nl.kats.dabo.dsl;
 
 import java.util.ArrayList;
 import java.util.Optional;
 
-import nl.kats.dabo.dsl.CardCollection;
 import nl.kats.dabo.dsl.cards.Card;
 import nl.kats.dabo.dsl.cards.equipment.EquipmentCard;
 import nl.kats.dabo.dsl.cards.event.EventCard;

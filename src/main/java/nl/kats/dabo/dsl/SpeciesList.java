@@ -1,10 +1,10 @@
-package nl.kats.dabo.play;
-
-import java.util.HashSet;
+package nl.kats.dabo.dsl;
 
 import nl.kats.dabo.dsl.cards.CardType;
 import nl.kats.dabo.dsl.cards.Taxoned;
 import nl.kats.dabo.dsl.enums.Species;
+
+import java.util.HashSet;
 
 public class SpeciesList<T extends CardType> extends HashSet<Species> implements Taxoned<T> {
 
