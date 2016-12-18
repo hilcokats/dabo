@@ -1,7 +1,6 @@
 package nl.kats.dabo.expansions.starterdecks.klingon.interrupts;
 
-import nl.kats.dabo.dsl.cards.Action;
-import nl.kats.dabo.expansions.CardBuilder;
+import nl.kats.dabo.dsl.CardBuilder;
 
 public class RenderAssistence extends CardBuilder {
 

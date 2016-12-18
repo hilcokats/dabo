@@ -1,6 +1,6 @@
 package nl.kats.dabo.expansions.starterdecks.klingon.missions.planet;
 
-import nl.kats.dabo.expansions.CardBuilder;
+import nl.kats.dabo.dsl.CardBuilder;
 
 public class KithomerInvestigation extends CardBuilder {
 

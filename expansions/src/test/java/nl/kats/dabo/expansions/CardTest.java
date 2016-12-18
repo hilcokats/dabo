@@ -1,6 +1,7 @@
 package nl.kats.dabo.expansions;
 
 import junit.framework.Assert;
+import nl.kats.dabo.dsl.CardBuilder;
 import nl.kats.dabo.dsl.CardCatalog;
 import nl.kats.dabo.dsl.cards.CardDefinition;
 import org.junit.Test;

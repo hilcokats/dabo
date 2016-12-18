@@ -1,6 +1,6 @@
 package nl.kats.dabo.expansions.starterdecks.klingon.events;
 
-import nl.kats.dabo.expansions.CardBuilder;
+import nl.kats.dabo.dsl.CardBuilder;
 
 public class CryHavoc extends CardBuilder {
 

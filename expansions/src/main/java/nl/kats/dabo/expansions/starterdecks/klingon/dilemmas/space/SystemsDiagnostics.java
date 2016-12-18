@@ -1,7 +1,7 @@
 package nl.kats.dabo.expansions.starterdecks.klingon.dilemmas.space;
 
 import nl.kats.dabo.dsl.enums.Skill;
-import nl.kats.dabo.expansions.CardBuilder;
+import nl.kats.dabo.dsl.CardBuilder;
 
 public class SystemsDiagnostics extends CardBuilder {
 

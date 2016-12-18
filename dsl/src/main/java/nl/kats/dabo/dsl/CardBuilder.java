@@ -1,4 +1,4 @@
-package nl.kats.dabo.expansions;
+package nl.kats.dabo.dsl;
 
 import nl.kats.dabo.dsl.cards.Collectable;
 import nl.kats.dabo.dsl.cards.dilemma.DilemmaDefinition;
@@ -15,7 +15,6 @@ import nl.kats.dabo.dsl.cards.personnel.PersonnelDefinition;
 import nl.kats.dabo.dsl.cards.personnel.PersonnelType;
 import nl.kats.dabo.dsl.cards.ship.ShipDefinition;
 import nl.kats.dabo.dsl.cards.ship.ShipType;
-import nl.kats.dabo.dsl.CardCatalog;
 
 public abstract class CardBuilder extends CardBuilderSupport {
 

@@ -1,7 +1,7 @@
 package nl.kats.dabo.expansions.starterdecks.klingon.ships;
 
 import nl.kats.dabo.dsl.enums.Keyword;
-import nl.kats.dabo.expansions.CardBuilder;
+import nl.kats.dabo.dsl.CardBuilder;
 
 public class KronosOne extends CardBuilder {
 
