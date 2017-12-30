@@ -74,5 +74,4 @@ public class DilemmaDefinition extends CardDefinition<DilemmaType> implements Di
 	public UnlessClause<DilemmaType> getUnlessClause() {
 		return unlessClause;
 	}
-	
-}
+  }

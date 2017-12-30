@@ -1,12 +1,12 @@
 package nl.kats.dabo.dsl;
 
+import nl.kats.dabo.dsl.cards.CardType;
+import nl.kats.dabo.dsl.cards.Described;
+import nl.kats.dabo.dsl.enums.Keyword;
+
 import java.util.HashSet;
 
-import nl.kats.dabo.dsl.cards.CardType;
-import nl.kats.dabo.dsl.enums.Keyword;
-import nl.kats.dabo.dsl.cards.Described;
-
-public class KeywordList<T extends CardType> extends HashSet<Keyword> implements Described<T> {
+public final class KeywordList<T extends CardType> extends HashSet<Keyword> implements Described<T> {
 
 	private static final long serialVersionUID = 873623546385075465L;
 

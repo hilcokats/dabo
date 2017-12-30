@@ -1,8 +1,8 @@
 package nl.kats.dabo.dsl.cards.ship;
 
-import nl.kats.dabo.dsl.cards.Card;
+import nl.kats.dabo.dsl.cards.AffiliatedCard;
 
-public interface ShipCard extends Card {
+public interface ShipCard extends AffiliatedCard {
 
 	boolean staffed();
 

@@ -1,6 +1,6 @@
 package nl.kats.dabo.dsl;
 
 @SuppressWarnings("serial")
-public class NonUniqueCardNameException extends Exception {
+public final class NonUniqueCardNameException extends Exception {
 
 }

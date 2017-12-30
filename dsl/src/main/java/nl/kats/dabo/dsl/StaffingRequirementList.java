@@ -1,12 +1,13 @@
 package nl.kats.dabo.dsl;
 
-import java.util.ArrayList;
-
 import nl.kats.dabo.dsl.cards.CardType;
 import nl.kats.dabo.dsl.cards.StaffingRequirement;
 import nl.kats.dabo.dsl.enums.Icon;
 
-public class StaffingRequirementList<T extends CardType> extends ArrayList<Icon> implements StaffingRequirement<T> {
+import java.util.ArrayList;
+
+public final class StaffingRequirementList<T extends CardType> extends ArrayList<Icon> implements
+		StaffingRequirement<T> {
 
 	private static final long serialVersionUID = -6423116798753691027L;
 

@@ -1,19 +1,17 @@
 package nl.kats.dabo.dsl;
 
 import nl.kats.dabo.dsl.cards.CardDefinition;
-import nl.kats.dabo.dsl.cards.CardType;
 
 import java.util.HashSet;
-import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 
 @SuppressWarnings({"serial", "rawtypes"})
-public class CardCatalog extends HashSet<CardDefinition> {
+public final class CardCatalog extends HashSet<CardDefinition> {
 
-	public static CardCatalog CARDS = new CardCatalog();
+    public static CardCatalog CARDS = new CardCatalog();
 
-    public CardType get(String title) throws CardNotFoundException, NonUniqueCardNameException {
+    public CardDefinition get(String title) throws CardNotFoundException, NonUniqueCardNameException {
         Set<CardDefinition> matchingCards = this.stream().filter(c -> c.getTitle().equals(title)).collect(Collectors.toSet());
         if (matchingCards.isEmpty()) {
             throw new CardNotFoundException();
@@ -24,13 +22,14 @@ public class CardCatalog extends HashSet<CardDefinition> {
         }
     }
 
-    public CardType get(String title, String subtitle) throws CardNotFoundException {
-        Optional<CardDefinition> matchingCard = this.stream().filter(c -> c.getTitle().equals(title)).filter(c -> c.getSubtitle().equals(subtitle)).findFirst();
-        if (matchingCard.isPresent()) {
-            return matchingCard.get();
-        } else {
-            throw new CardNotFoundException();
-        }
+    public CardDefinition get(String title, String subtitle) throws CardNotFoundException {
+        return this.stream().filter(c -> c.getTitle().equals(title)).filter(c -> c
+                .getSubtitle().equals(subtitle)).findFirst().orElseThrow(CardNotFoundException::new);
+    }
+
+    public CardDefinition getByCollectorsId(String collectorsId) throws CardNotFoundException {
+        return this.stream().filter(c -> c.getCollectorsId().equals(collectorsId)).findFirst()
+                .orElseThrow(CardNotFoundException::new);
     }
 
 }

@@ -1,6 +1,6 @@
 package nl.kats.dabo.dsl.cards;
 
-import nl.kats.dabo.dsl.ActionContext;
+import nl.kats.dabo.dsl.context.ActionContext;
 
 public interface Action {
 	

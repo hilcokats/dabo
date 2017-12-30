@@ -4,8 +4,8 @@ import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 import org.apache.commons.lang.builder.ToStringBuilder;
 
-import nl.kats.dabo.dsl.ActionContext;
-import nl.kats.dabo.dsl.CardPools;
+import nl.kats.dabo.dsl.context.ActionContext;
+import nl.kats.dabo.dsl.TableAreas;
 import nl.kats.dabo.dsl.IconList;
 import nl.kats.dabo.dsl.KeywordList;
 
@@ -27,7 +27,7 @@ public abstract class CardDefinition<T extends CardType> implements CardType, Co
 
     private WhileClause<T> whileClause;
 
-    private CardPools<T> playsOn;
+    private TableAreas<T> playsOn;
 
     protected CardDefinition(String title) {
         this(title, null);
@@ -53,8 +53,8 @@ public abstract class CardDefinition<T extends CardType> implements CardType, Co
     }
 
     @SuppressWarnings("unchecked")
-    public CardPools<T> playsOn() {
-        this.playsOn = new CardPools<>((T) this);
+    public TableAreas<T> playsOn() {
+        this.playsOn = new TableAreas<>((T) this);
         return this.playsOn;
     }
 
@@ -154,7 +154,7 @@ public abstract class CardDefinition<T extends CardType> implements CardType, Co
         return lore;
     }
 
-    protected KeywordList<T> getKeywords() {
+    public KeywordList<T> getKeywords() {
         return keywords;
     }
 

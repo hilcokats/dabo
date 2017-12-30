@@ -17,5 +17,8 @@ public abstract class AffiliatedCardDefinition<T extends CardType> extends CardD
 	public Affiliated<T> affiliation() {
 		return new Affiliated<>(this);
 	}
-	
+
+	public Affiliation getAffiliation() {
+		return affiliation;
+	}
 }

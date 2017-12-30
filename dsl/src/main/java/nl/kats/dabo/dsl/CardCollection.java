@@ -1,12 +1,11 @@
 package nl.kats.dabo.dsl;
 
-import java.util.List;
-import java.util.Optional;
-
-import nl.kats.dabo.dsl.cards.Card;
+import nl.kats.dabo.dsl.cards.DefinedCard;
+import nl.kats.dabo.dsl.cards.dilemma.DilemmaCard;
 import nl.kats.dabo.dsl.cards.equipment.EquipmentCard;
 import nl.kats.dabo.dsl.cards.event.EventCard;
 import nl.kats.dabo.dsl.cards.interrupt.InterruptCard;
+import nl.kats.dabo.dsl.cards.mission.MissionCard;
 import nl.kats.dabo.dsl.cards.personnel.PersonnelCard;
 import nl.kats.dabo.dsl.cards.ship.ShipCard;
 import nl.kats.dabo.dsl.enums.Affiliation;
@@ -14,13 +13,14 @@ import nl.kats.dabo.dsl.enums.Keyword;
 import nl.kats.dabo.dsl.enums.Skill;
 import nl.kats.dabo.dsl.enums.Status;
 
-public interface CardCollection<T extends Card> extends List<T> {
+import java.util.Collection;
+import java.util.Optional;
 
-    boolean contains(String cardName);
+public interface CardCollection<T extends DefinedCard> extends Collection<T> {
 
-    Optional<Card> top();
+    Optional<DefinedCard> top();
 
-    Optional<Card> bottom();
+    Optional<DefinedCard> bottom();
 
     CardCollection<PersonnelCard> personnel();
 
@@ -32,29 +32,27 @@ public interface CardCollection<T extends Card> extends List<T> {
 
     CardCollection<EventCard> events();
 
+    CardCollection<MissionCard> missions();
+
+    CardCollection<DilemmaCard> dilemmas();
+
     CardCollection<T> with(Affiliation affiliation);
-
-    CardCollection<T> withAny(Affiliation... affiliation);
-
-    CardCollection<T> withAll(Affiliation... affiliation);
 
     CardCollection<T> with(Keyword keyword);
 
-    CardCollection<T> withAny(Keyword... keyword);
+    CardCollection<T> withAny(Keyword... keywords);
 
-    CardCollection<T> withAll(Keyword... keyword);
+    CardCollection<T> withAll(Keyword... keywords);
 
     CardCollection<PersonnelCard> with(Skill skill);
 
-    CardCollection<PersonnelCard> withAny(Skill... skill);
+    CardCollection<PersonnelCard> withAny(Skill... skills);
 
-    CardCollection<PersonnelCard> withAll(Skill... skill);
+    CardCollection<PersonnelCard> withAll(Skill... skills);
 
     CardCollection<T> with(Status status);
 
-    CardCollection<T> withAny(Status... status);
-
-    CardCollection<T> withAll(Status... status);
+    CardCollection<T> withAny(Status... statuses);
 
     boolean stop();
 
@@ -65,4 +63,11 @@ public interface CardCollection<T extends Card> extends List<T> {
     boolean removeFromTheGame();
 
     boolean shuffleAndReplace();
+
+    CardCollection<T> selectedCards();
+
+    default boolean contains(String cardName) {
+        return this.stream().anyMatch(card -> card.getName().equals(cardName));
+    }
+
 }

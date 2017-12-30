@@ -1,12 +1,12 @@
 package nl.kats.dabo.dsl;
 
-import java.util.HashSet;
-
 import nl.kats.dabo.dsl.cards.CardType;
 import nl.kats.dabo.dsl.cards.Iconed;
 import nl.kats.dabo.dsl.enums.Icon;
 
-public class IconList<T extends CardType> extends HashSet<Icon> implements Iconed<T> {
+import java.util.HashSet;
+
+public final class IconList<T extends CardType> extends HashSet<Icon> implements Iconed<T> {
 
 	private static final long serialVersionUID = -6423116798753691027L;
 

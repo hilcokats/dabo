@@ -1,6 +1,6 @@
 package nl.kats.dabo.dsl.cards;
 
-import nl.kats.dabo.dsl.CardPools;
+import nl.kats.dabo.dsl.TableAreas;
 
 public interface MinimalType<T extends CardType> extends CardType {
 
@@ -10,7 +10,7 @@ public interface MinimalType<T extends CardType> extends CardType {
 
     T allowedWhen(Predicate object);
 
-    CardPools<T> playsOn();
+    TableAreas<T> playsOn();
 
     Described<T> keywords();
 

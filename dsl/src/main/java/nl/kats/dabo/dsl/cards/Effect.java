@@ -1,7 +1,5 @@
 package nl.kats.dabo.dsl.cards;
 
-import nl.kats.dabo.dsl.cards.dilemma.DilemmaType;
-import nl.kats.dabo.dsl.cards.dilemma.UnlessClause;
 import nl.kats.dabo.dsl.enums.SelectionMethod;
 import nl.kats.dabo.dsl.enums.SelectionRestriction;
 

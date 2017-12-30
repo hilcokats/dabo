@@ -1,7 +1,7 @@
 package nl.kats.dabo.dsl;
 
 import nl.kats.dabo.dsl.cards.Action;
-import nl.kats.dabo.dsl.cards.Card;
+import nl.kats.dabo.dsl.cards.DefinedCard;
 import nl.kats.dabo.dsl.cards.personnel.PersonnelCard;
 
 import java.util.Optional;
@@ -61,7 +61,7 @@ public abstract class CardBuilderSupport {
 
     protected Action download(String cardName) {
         return c -> {
-            Optional<Card> first = c.your().deck().stream()
+            Optional<DefinedCard> first = c.your().deck().stream()
                     .filter(card -> card.getName().equals(cardName))
                     .findFirst();
 

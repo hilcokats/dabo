@@ -6,7 +6,7 @@ import nl.kats.dabo.dsl.enums.Species;
 
 import java.util.HashSet;
 
-public class SpeciesList<T extends CardType> extends HashSet<Species> implements Taxoned<T> {
+public final class SpeciesList<T extends CardType> extends HashSet<Species> implements Taxoned<T> {
 
 	private static final long serialVersionUID = -8846989622983679147L;
 	

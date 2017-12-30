@@ -5,7 +5,6 @@ import nl.kats.dabo.dsl.enums.Region;
 
 public class MissionDefinition extends CardDefinition<MissionType> implements MissionType {
 
-
     private enum Quadrant {
         ALPHA, BETA, GAMMA, DELTA;
     }
@@ -98,5 +97,8 @@ public class MissionDefinition extends CardDefinition<MissionType> implements Mi
         return this;
     }
 
+    public Region getRegion() {
+        return region;
+    }
 
 }

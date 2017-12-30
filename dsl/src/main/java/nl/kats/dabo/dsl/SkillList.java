@@ -1,12 +1,12 @@
 package nl.kats.dabo.dsl;
 
-import java.util.ArrayList;
-
 import nl.kats.dabo.dsl.cards.CardType;
 import nl.kats.dabo.dsl.cards.Skilled;
 import nl.kats.dabo.dsl.enums.Skill;
 
-public class SkillList<T extends CardType> extends ArrayList<Skill> implements Skilled<T> {
+import java.util.ArrayList;
+
+public final class SkillList<T extends CardType> extends ArrayList<Skill> implements Skilled<T> {
 
 	private static final long serialVersionUID = 4076212054456516514L;
 

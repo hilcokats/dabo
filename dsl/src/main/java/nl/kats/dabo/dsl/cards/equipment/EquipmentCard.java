@@ -1,7 +1,7 @@
 package nl.kats.dabo.dsl.cards.equipment;
 
-import nl.kats.dabo.dsl.cards.Card;
+import nl.kats.dabo.dsl.cards.DefinedCard;
 
-public interface EquipmentCard extends Card {
+public interface EquipmentCard extends DefinedCard {
 
 }

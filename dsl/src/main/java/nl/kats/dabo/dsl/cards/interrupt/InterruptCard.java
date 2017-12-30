@@ -1,7 +1,7 @@
 package nl.kats.dabo.dsl.cards.interrupt;
 
-import nl.kats.dabo.dsl.cards.Card;
+import nl.kats.dabo.dsl.cards.DefinedCard;
 
-public interface InterruptCard extends Card {
+public interface InterruptCard extends DefinedCard {
 
 }
