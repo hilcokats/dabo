@@ -12,9 +12,9 @@ public class Requirements<T extends CardType> extends ArrayList<Skill> {
     private static final long serialVersionUID = -7444639176475667583L;
 
     private final T card;
-    private Requirements<T> partOf;
     private final List<AttributeRequirements<T>> attributes = new ArrayList<>();
     private final List<Requirements<T>> options = new ArrayList<>();
+    private Requirements<T> partOf;
 
     public Requirements(T mission) {
         this.card = mission;
@@ -141,13 +141,13 @@ public class Requirements<T extends CardType> extends ArrayList<Skill> {
     }
 
     public Requirements<T> either() {
-        Requirements<T> option = new Requirements<>(card, this);
+        var option = new Requirements<>(card, this);
         this.options.add(option);
         return option;
     }
 
     public Requirements<T> or() {
-        Requirements<T> option = new Requirements<>(card, this);
+        var option = new Requirements<>(card, this);
         if (partOf == null) {
             options.add(option);
         } else {
@@ -161,37 +161,37 @@ public class Requirements<T extends CardType> extends ArrayList<Skill> {
     }
 
     public AttributeRequirements<T> integrity() {
-        AttributeRequirements<T> attribute = new AttributeRequirements<>(Attribute.INTEGRITY, this);
+        var attribute = new AttributeRequirements<>(Attribute.INTEGRITY, this);
         attributes.add(attribute);
         return attribute;
     }
 
     public AttributeRequirements<T> cunning() {
-        AttributeRequirements<T> attribute = new AttributeRequirements<>(Attribute.CUNNING, this);
+        var attribute = new AttributeRequirements<>(Attribute.CUNNING, this);
         attributes.add(attribute);
         return attribute;
     }
 
     public AttributeRequirements<T> strength() {
-        AttributeRequirements<T> attribute = new AttributeRequirements<>(Attribute.STRENGTH, this);
+        var attribute = new AttributeRequirements<>(Attribute.STRENGTH, this);
         attributes.add(attribute);
         return attribute;
     }
 
     public AttributeRequirements<T> range() {
-        AttributeRequirements<T> attribute = new AttributeRequirements<>(Attribute.RANGE, this);
+        var attribute = new AttributeRequirements<>(Attribute.RANGE, this);
         attributes.add(attribute);
         return attribute;
     }
 
     public AttributeRequirements<T> weapons() {
-        AttributeRequirements<T> attribute = new AttributeRequirements<>(Attribute.WEAPONS, this);
+        var attribute = new AttributeRequirements<>(Attribute.WEAPONS, this);
         attributes.add(attribute);
         return attribute;
     }
 
     public AttributeRequirements<T> shields() {
-        AttributeRequirements<T> attribute = new AttributeRequirements<>(Attribute.SHIELDS, this);
+        var attribute = new AttributeRequirements<>(Attribute.SHIELDS, this);
         attributes.add(attribute);
         return attribute;
     }

@@ -12,6 +12,6 @@ public final class CryHavoc extends CardBuilder {
                 .playsOn().core().end()
                 .keywords().maneuver().end()
                 .destroyTo()
-                .toBeginEngagement();
+                .beginEngagement();
     }
 }

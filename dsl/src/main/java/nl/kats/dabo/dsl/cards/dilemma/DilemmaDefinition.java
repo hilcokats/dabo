@@ -8,70 +8,70 @@ import nl.kats.dabo.dsl.enums.Keyword;
 
 public class DilemmaDefinition extends CardDefinition<DilemmaType> implements DilemmaType {
 
-	private boolean planet;
-	private boolean space;
-	private int consume;
-	private UnlessClause<DilemmaType> unlessClause;
+    private boolean planet;
+    private boolean space;
+    private int consume;
+    private UnlessClause<DilemmaType> unlessClause;
 
-	public DilemmaDefinition(String title) {
-		super(title);
-	}
+    public DilemmaDefinition(String title) {
+        super(title);
+    }
 
-	public DilemmaDefinition(String title, String subtitle) {
-		super(title, subtitle);
-	}
-	
+    public DilemmaDefinition(String title, String subtitle) {
+        super(title, subtitle);
+    }
 
-	@Override
-	public DilemmaType space() {
-		space = true;
-		return this;
-	}
 
-	@Override
-	public DilemmaType planet() {
-		planet = true;
-		return this;
-	}
-	
-	@Override
-	public DilemmaType consume(int amount) {
-		this.consume = amount;
-		this.getKeywords().add(Keyword.CONSUME);
-		return this;
-	}
+    @Override
+    public DilemmaType space() {
+        space = true;
+        return this;
+    }
 
-	@Override
-	public DilemmaWhenClause when() {
-		whenClause = new DilemmaWhenClause(this);
-		return (DilemmaWhenClause) this.whenClause;
-	}
+    @Override
+    public DilemmaType planet() {
+        planet = true;
+        return this;
+    }
 
-	@Override
-	public UnlessClause<DilemmaType> unless() {
-		unlessClause = new UnlessClause<>(this);
-		return this.unlessClause;
-	}
+    @Override
+    public DilemmaType consume(int amount) {
+        this.consume = amount;
+        this.getKeywords().add(Keyword.CONSUME);
+        return this;
+    }
 
-	@Override
-	public Effect<DilemmaType> unless(Predicate predicate) {
-		unlessClause = new UnlessClause<>(this, predicate);
-		return this.unlessClause.getEffect();
-	}
+    @Override
+    public DilemmaWhenClause when() {
+        whenClause = new DilemmaWhenClause(this);
+        return (DilemmaWhenClause) this.whenClause;
+    }
 
-	public boolean isPlanet() {
-		return planet;
-	}
+    @Override
+    public UnlessClause<DilemmaType> unless() {
+        unlessClause = new UnlessClause<>(this);
+        return this.unlessClause;
+    }
 
-	public boolean isSpace() {
-		return space;
-	}
+    @Override
+    public Effect<DilemmaType> unless(Predicate predicate) {
+        unlessClause = new UnlessClause<>(this, predicate);
+        return this.unlessClause.getEffect();
+    }
 
-	public int getConsume() {
-		return consume;
-	}
+    public boolean isPlanet() {
+        return planet;
+    }
 
-	public UnlessClause<DilemmaType> getUnlessClause() {
-		return unlessClause;
-	}
-  }
+    public boolean isSpace() {
+        return space;
+    }
+
+    public int getConsume() {
+        return consume;
+    }
+
+    public UnlessClause<DilemmaType> getUnlessClause() {
+        return unlessClause;
+    }
+}

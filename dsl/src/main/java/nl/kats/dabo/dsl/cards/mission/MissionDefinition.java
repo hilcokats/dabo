@@ -1,13 +1,13 @@
 package nl.kats.dabo.dsl.cards.mission;
 
-import nl.kats.dabo.dsl.cards.*;
+import nl.kats.dabo.dsl.cards.Attemptable;
+import nl.kats.dabo.dsl.cards.CardDefinition;
+import nl.kats.dabo.dsl.cards.Headquarters;
+import nl.kats.dabo.dsl.cards.MissionWhenClause;
+import nl.kats.dabo.dsl.cards.Regional;
 import nl.kats.dabo.dsl.enums.Region;
 
 public class MissionDefinition extends CardDefinition<MissionType> implements MissionType {
-
-    private enum Quadrant {
-        ALPHA, BETA, GAMMA, DELTA;
-    }
 
     public Quadrant quadrant;
     public Region region;
@@ -15,11 +15,9 @@ public class MissionDefinition extends CardDefinition<MissionType> implements Mi
     private boolean space;
     private int span;
     private int points;
-
     private Requirements<MissionType> requirements = new Requirements<>(this);
     private Attemptable<MissionType> affiliations = new Attemptable<>(this);
     private Headquarters<MissionType> headquarters = new Headquarters<>(this);
-
     public MissionDefinition(String title) {
         super(title);
     }
@@ -45,7 +43,6 @@ public class MissionDefinition extends CardDefinition<MissionType> implements Mi
         quadrant = Quadrant.DELTA;
         return this;
     }
-
 
     @Override
     public Regional region() {
@@ -99,6 +96,10 @@ public class MissionDefinition extends CardDefinition<MissionType> implements Mi
 
     public Region getRegion() {
         return region;
+    }
+
+    private enum Quadrant {
+        ALPHA, BETA, GAMMA, DELTA
     }
 
 }

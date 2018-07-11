@@ -5,6 +5,7 @@ import nl.kats.dabo.dsl.cards.mission.MissionCard;
 import nl.kats.dabo.dsl.cards.ship.ShipCard;
 import nl.kats.dabo.dsl.cards.ship.ShipDefinition;
 import nl.kats.dabo.dsl.enums.Affiliation;
+import nl.kats.dabo.dsl.enums.Region;
 import nl.kats.dabo.game.Player;
 
 public class Ship extends Card<Ship> implements ShipCard {
@@ -21,7 +22,7 @@ public class Ship extends Card<Ship> implements ShipCard {
 
     @Override
     public boolean staffed() {
-        StaffingRequirementList<?> icons = (StaffingRequirementList<?>) definition.staffingRequirements();
+        var icons = (StaffingRequirementList<?>) definition.staffingRequirements();
         //TODO: implement
         //personnel().stream().filter(p -> p.getIcons());
         return false;
@@ -53,7 +54,7 @@ public class Ship extends Card<Ship> implements ShipCard {
     }
 
     @Override
-    public boolean inRegion(String region) {
+    public boolean inRegion(Region region) {
         return location != null && location instanceof Mission && ((Mission)location).getRegion() != null &&
                 ((Mission)location).getRegion().equals(region);
     }

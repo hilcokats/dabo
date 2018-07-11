@@ -7,17 +7,17 @@ import nl.kats.dabo.dsl.cards.StaffingRequirement;
 
 public interface ShipType extends MinimalType<ShipType> {
 
-	Classified classification();
+    Classified classification();
 
-	Affiliated<ShipType> affiliation();
-	
-	StaffingRequirement<ShipType> staffingRequirements();
+    Affiliated<ShipType> affiliation();
 
-	ShipType range(int value);
+    StaffingRequirement<ShipType> staffingRequirements();
 
-	ShipType weapons(int value);
+    ShipType range(int value);
 
-	ShipType shields(int value);
+    ShipType weapons(int value);
+
+    ShipType shields(int value);
 
 
 }

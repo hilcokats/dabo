@@ -1,5 +1,7 @@
 package nl.kats.dabo.dsl.cards;
 
+import nl.kats.dabo.dsl.context.ActionContext;
+
 public class WhenClause<T extends CardType> extends Conditional<T> {
 
     public WhenClause(T card) {
@@ -47,13 +49,13 @@ public class WhenClause<T extends CardType> extends Conditional<T> {
     }
 
     public Effect<T> combatStarts() {
-        this.predicate = c -> c.combatStarts();
+        this.predicate = ActionContext::combatStarts;
         this.effect = new Effect<>(card);
         return this.effect;
     }
 
     public Effect<T> engagementStarts() {
-        this.predicate = c -> c.engagementStarts();
+        this.predicate = ActionContext::engagementStarts;
         this.effect = new Effect<>(card);
         return this.effect;
     }

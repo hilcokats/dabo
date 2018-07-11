@@ -1,108 +1,108 @@
 package nl.kats.dabo.dsl.cards.personnel;
 
+import nl.kats.dabo.dsl.SkillList;
+import nl.kats.dabo.dsl.SpeciesList;
 import nl.kats.dabo.dsl.cards.AffiliatedCardDefinition;
 import nl.kats.dabo.dsl.cards.Skilled;
 import nl.kats.dabo.dsl.cards.Taxoned;
 import nl.kats.dabo.dsl.enums.Keyword;
 import nl.kats.dabo.dsl.enums.Skill;
-import nl.kats.dabo.dsl.SkillList;
-import nl.kats.dabo.dsl.SpeciesList;
 
 public class PersonnelDefinition extends AffiliatedCardDefinition<PersonnelType>
-		implements PersonnelType {
+        implements PersonnelType {
 
-	private String ship;
-	private Skill interlink;
-	
-	private int integrity;
-	private int cunning;
-	private int strength;
+    private String ship;
+    private Skill interlink;
 
-	private Taxoned<PersonnelType> species;
-	private Skilled<PersonnelType> skills;
+    private int integrity;
+    private int cunning;
+    private int strength;
 
-	public PersonnelDefinition(String title) {
-		super(title);
-	}
-	
-	public PersonnelDefinition(String title, String subtitle) {
-		super(title, subtitle);
-	}
+    private SpeciesList<PersonnelType> species;
+    private SkillList<PersonnelType> skills;
 
-	/* DSL methods */
-	
-	@Override
-	public PersonnelType commander(String shipName) {
-		this.ship = shipName;
-		this.getKeywords().add(Keyword.COMMANDER);
-		return this;
-	}
-	
-	@Override
-	public PersonnelType interlink(Skill skill) {
-		this.interlink = skill;
-		this.getKeywords().add(Keyword.COMMANDER);
-		return this;
-	}
-	
-	@Override
-	public PersonnelType integrity(int value) {
-		this.integrity = value;
-		return this;
-	}
+    public PersonnelDefinition(String title) {
+        super(title);
+    }
 
-	@Override
-	public PersonnelType cunning(int value) {
-		this.cunning = value;
-		return this;
-	}
+    public PersonnelDefinition(String title, String subtitle) {
+        super(title, subtitle);
+    }
 
-	@Override
-	public PersonnelType strength(int value) {
-		this.strength = value;
-		return this;
-	}
+    /* DSL methods */
 
-	@Override
-	public Taxoned<PersonnelType> species() {
-		this.species = new SpeciesList<>(this);
-		return this.species;
-	}
+    @Override
+    public PersonnelType commander(String shipName) {
+        this.ship = shipName;
+        this.getKeywords().add(Keyword.COMMANDER);
+        return this;
+    }
 
-	@Override
-	public Skilled<PersonnelType> skills() {
-		this.skills = new SkillList<>(this);
-		return this.skills;
-	}
-	
-	/* Getters */
+    @Override
+    public PersonnelType interlink(Skill skill) {
+        this.interlink = skill;
+        this.getKeywords().add(Keyword.COMMANDER);
+        return this;
+    }
 
-	public int getIntegrity() {
-		return integrity;
-	}
+    @Override
+    public PersonnelType integrity(int value) {
+        this.integrity = value;
+        return this;
+    }
 
-	public int getCunning() {
-		return cunning;
-	}
+    @Override
+    public PersonnelType cunning(int value) {
+        this.cunning = value;
+        return this;
+    }
 
-	public int getStrength() {
-		return strength;
-	}
-	
-	public String getShip() {
-		return ship;
-	}
-	
-	public Skill getInterlink() {
-		return interlink;
-	}
+    @Override
+    public PersonnelType strength(int value) {
+        this.strength = value;
+        return this;
+    }
 
-	public Taxoned<PersonnelType> getSpecies() {
-		return species;
-	}
+    @Override
+    public Taxoned<PersonnelType> species() {
+        this.species = new SpeciesList<>(this);
+        return this.species;
+    }
 
-	public Skilled<PersonnelType> getSkills() {
-		return skills;
-	}
+    @Override
+    public Skilled<PersonnelType> skills() {
+        this.skills = new SkillList<>(this);
+        return this.skills;
+    }
+
+    /* Getters */
+
+    public int getIntegrity() {
+        return integrity;
+    }
+
+    public int getCunning() {
+        return cunning;
+    }
+
+    public int getStrength() {
+        return strength;
+    }
+
+    public String getShip() {
+        return ship;
+    }
+
+    public Skill getInterlink() {
+        return interlink;
+    }
+
+    public SpeciesList<PersonnelType> getSpecies() {
+        return species;
+    }
+
+    public SkillList<PersonnelType> getSkills() {
+        return skills;
+    }
 
 }

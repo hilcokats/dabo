@@ -1,21 +1,21 @@
 package nl.kats.dabo.dsl.enums;
 
 public enum Affiliation {
-	
-	BAJORAN, BORG,
 
-	CARDASSIAN,
+    BAJORAN, BORG,
 
-	DOMINION,
+    CARDASSIAN,
 
-	FEDERATION, FERENGI,
+    DOMINION,
 
-	KLINGON,
+    FEDERATION, FERENGI,
 
-	NON_ALIGNED,
+    KLINGON,
 
-	ROMULAN,
+    NON_ALIGNED,
 
-	STARFLEET
+    ROMULAN,
+
+    STARFLEET
 
 }

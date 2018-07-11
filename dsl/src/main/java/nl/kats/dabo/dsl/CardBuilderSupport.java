@@ -1,10 +1,8 @@
 package nl.kats.dabo.dsl;
 
 import nl.kats.dabo.dsl.cards.Action;
-import nl.kats.dabo.dsl.cards.DefinedCard;
 import nl.kats.dabo.dsl.cards.personnel.PersonnelCard;
 
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 public abstract class CardBuilderSupport {
@@ -12,7 +10,8 @@ public abstract class CardBuilderSupport {
     private Action addSkills(CardCollection<PersonnelCard> personnel) {
         return c -> {
             //TODO
-//            c.selectedCards().personnel().forEach(personnelCard -> personnelCard.adjustSkills(personnel.getSkills()));
+            //            c.selectedCards().personnel().forEach(personnelCard -> personnelCard.adjustSkills(personnel
+            // .getSkills()));
             return true;
         };
     }
@@ -61,7 +60,7 @@ public abstract class CardBuilderSupport {
 
     protected Action download(String cardName) {
         return c -> {
-            Optional<DefinedCard> first = c.your().deck().stream()
+            var first = c.your().deck().stream()
                     .filter(card -> card.getName().equals(cardName))
                     .findFirst();
 
@@ -90,8 +89,12 @@ public abstract class CardBuilderSupport {
 
     protected Action moveSelectedToOwnersHand() {
         return context ->
-                context.your().hand().addAll(context.selectedCards().stream().filter(c -> c.owner().equals(context.you())).collect(Collectors.toList())) &&
-                        context.opponents().hand().addAll(context.selectedCards().stream().filter(c -> c.owner().equals(context.opponent())).collect(Collectors.toList()));
+                context.your().hand()
+                        .addAll(context.selectedCards().stream().filter(c -> c.owner().equals(context.you()))
+                                        .collect(Collectors.toList())) &&
+                context.opponents().hand()
+                        .addAll(context.selectedCards().stream().filter(c -> c.owner().equals(context.opponent()))
+                                        .collect(Collectors.toList()));
     }
 
     protected Action joinEngagement() {

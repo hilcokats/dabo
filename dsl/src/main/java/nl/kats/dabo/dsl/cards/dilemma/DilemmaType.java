@@ -7,17 +7,17 @@ import nl.kats.dabo.dsl.cards.Predicate;
 
 public interface DilemmaType extends MinimalType<DilemmaType> {
 
-	DilemmaType space();
+    DilemmaType space();
 
-	DilemmaType planet();
-	
-	DilemmaType consume(int i);
-	
-	@Override
-	DilemmaWhenClause when();
+    DilemmaType planet();
 
-	UnlessClause<DilemmaType> unless();
-	
-	Effect<DilemmaType> unless(Predicate predicate);
-	
+    DilemmaType consume(int i);
+
+    @Override
+    DilemmaWhenClause when();
+
+    UnlessClause<DilemmaType> unless();
+
+    Effect<DilemmaType> unless(Predicate predicate);
+
 }

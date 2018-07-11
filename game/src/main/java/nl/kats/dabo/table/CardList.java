@@ -154,26 +154,26 @@ public class CardList<T extends DefinedCard> extends ArrayList<T> implements Car
     @Override
     public boolean stop() {
         boolean hasActive = this.stream().filter(card -> card.hasStatus(Status.ACTIVE)).count() > 0;
-        this.forEach(card -> card.stop());
+        this.forEach(DefinedCard::stop);
         return hasActive;
     }
 
     @Override
     public boolean unstop() {
         boolean hasStopped = this.stream().filter(card -> card.hasStatus(Status.STOPPED)).count() > 0;
-        this.forEach(card -> card.stop());
+        this.forEach(DefinedCard::stop);
         return hasStopped;
     }
 
     @Override
     public boolean discard() {
-        this.forEach(card -> card.discard());
+        this.forEach(DefinedCard::discard);
         return this.isEmpty();
     }
 
     @Override
     public boolean removeFromTheGame() {
-        this.forEach(card -> card.removeFromTheGame());
+        this.forEach(DefinedCard::removeFromTheGame);
         return this.isEmpty();
     }
 
@@ -191,7 +191,7 @@ public class CardList<T extends DefinedCard> extends ArrayList<T> implements Car
     @Override
     public boolean contains(Object object) {
         if (object instanceof Optional) {
-            Optional optional = (Optional) object;
+            var optional = (Optional) object;
             return optional.isPresent() && this.stream().anyMatch(card -> optional.get().equals(card));
         } else {
             return super.contains(object);

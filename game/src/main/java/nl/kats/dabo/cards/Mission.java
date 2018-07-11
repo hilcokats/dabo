@@ -35,7 +35,7 @@ public class Mission extends Card implements MissionCard {
     }
 
     @Override
-    public boolean inRegion(String region) {
+    public boolean inRegion(Region region) {
         return false;
     }
 }

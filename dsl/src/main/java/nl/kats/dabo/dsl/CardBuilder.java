@@ -21,85 +21,85 @@ public abstract class CardBuilder extends CardBuilderSupport {
     public abstract void build();
 
     public Collectable<PersonnelType> personnel(String title) {
-        PersonnelDefinition card = new PersonnelDefinition(title);
+        var card = new PersonnelDefinition(title);
         CardCatalog.CARDS.add(card);
         return card;
     }
 
     protected Collectable<PersonnelType> personnel(String title, String subtitle) {
-        PersonnelDefinition card = new PersonnelDefinition(title, subtitle);
+        var card = new PersonnelDefinition(title, subtitle);
         CardCatalog.CARDS.add(card);
         return card;
     }
 
     public Collectable<ShipType> ship(String title) {
-        ShipDefinition card = new ShipDefinition(title);
+        var card = new ShipDefinition(title);
         CardCatalog.CARDS.add(card);
         return card;
     }
 
     protected Collectable<ShipType> ship(String title, String subtitle) {
-        ShipDefinition card = new ShipDefinition(title, subtitle);
+        var card = new ShipDefinition(title, subtitle);
         CardCatalog.CARDS.add(card);
         return card;
     }
 
     protected Collectable<EquipmentType> equipment(String title) {
-        EquipmentDefinition card = new EquipmentDefinition(title);
+        var card = new EquipmentDefinition(title);
         CardCatalog.CARDS.add(card);
         return card;
     }
 
     public Collectable<EquipmentType> equipment(String title, String subtitle) {
-        EquipmentDefinition card = new EquipmentDefinition(title, subtitle);
+        var card = new EquipmentDefinition(title, subtitle);
         CardCatalog.CARDS.add(card);
         return card;
     }
 
     protected Collectable<EventType> event(String title) {
-        EventDefinition card = new EventDefinition(title);
+        var card = new EventDefinition(title);
         CardCatalog.CARDS.add(card);
         return card;
     }
 
     public Collectable<EventType> event(String title, String subtitle) {
-        EventDefinition card = new EventDefinition(title, subtitle);
+        var card = new EventDefinition(title, subtitle);
         CardCatalog.CARDS.add(card);
         return card;
     }
 
     protected Collectable<InterruptType> interrupt(String title) {
-        InterruptDefinition card = new InterruptDefinition(title);
+        var card = new InterruptDefinition(title);
         CardCatalog.CARDS.add(card);
         return card;
     }
 
     public Collectable<InterruptType> interrupt(String title, String subtitle) {
-        InterruptDefinition card = new InterruptDefinition(title, subtitle);
+        var card = new InterruptDefinition(title, subtitle);
         CardCatalog.CARDS.add(card);
         return card;
     }
 
     public Collectable<MissionType> mission(String title) {
-        MissionDefinition card = new MissionDefinition(title);
+        var card = new MissionDefinition(title);
         CardCatalog.CARDS.add(card);
         return card;
     }
 
     protected Collectable<MissionType> mission(String title, String subtitle) {
-        MissionDefinition card = new MissionDefinition(title, subtitle);
+        var card = new MissionDefinition(title, subtitle);
         CardCatalog.CARDS.add(card);
         return card;
     }
 
     protected Collectable<DilemmaType> dilemma(String title) {
-        DilemmaDefinition card = new DilemmaDefinition(title);
+        var card = new DilemmaDefinition(title);
         CardCatalog.CARDS.add(card);
         return card;
     }
 
     public Collectable<DilemmaType> dilemma(String title, String subtitle) {
-        DilemmaDefinition card = new DilemmaDefinition(title, subtitle);
+        var card = new DilemmaDefinition(title, subtitle);
         CardCatalog.CARDS.add(card);
         return card;
     }

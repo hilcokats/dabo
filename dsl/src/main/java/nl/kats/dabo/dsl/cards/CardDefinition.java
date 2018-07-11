@@ -1,30 +1,25 @@
 package nl.kats.dabo.dsl.cards;
 
+import nl.kats.dabo.dsl.IconList;
+import nl.kats.dabo.dsl.KeywordList;
+import nl.kats.dabo.dsl.TableAreas;
+import nl.kats.dabo.dsl.context.ActionContext;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 import org.apache.commons.lang.builder.ToStringBuilder;
-
-import nl.kats.dabo.dsl.context.ActionContext;
-import nl.kats.dabo.dsl.TableAreas;
-import nl.kats.dabo.dsl.IconList;
-import nl.kats.dabo.dsl.KeywordList;
 
 public abstract class CardDefinition<T extends CardType> implements CardType, Collectable<T> {
 
     private final String subtitle;
     private final String title;
-
+    protected WhenClause<T> whenClause;
     private int cost;
     private boolean unique;
     private String lore;
     private String collectorsId;
-
     private Predicate allowed;
     private KeywordList<T> keywords;
     private IconList<T> icons;
-
-    protected WhenClause<T> whenClause;
-
     private WhileClause<T> whileClause;
 
     private TableAreas<T> playsOn;
@@ -38,7 +33,7 @@ public abstract class CardDefinition<T extends CardType> implements CardType, Co
         this.subtitle = subtitle;
     }
 
-	/* DSL methods */
+    /* DSL methods */
 
     @SuppressWarnings("unchecked")
     public T unique() {
@@ -106,7 +101,7 @@ public abstract class CardDefinition<T extends CardType> implements CardType, Co
 
     @SuppressWarnings("unchecked")
     public Effect<T> destroyTo() {
-        Effect<T> effect = when().discarded();
+        var effect = when().discarded();
         effect.makeUserTriggered();
         return effect;
     }
@@ -123,8 +118,8 @@ public abstract class CardDefinition<T extends CardType> implements CardType, Co
         this.collectorsId = collectorsId;
         return (T) this;
     }
-	
-	/* Getters */
+
+    /* Getters */
 
     public String getCollectorsId() {
         return collectorsId;

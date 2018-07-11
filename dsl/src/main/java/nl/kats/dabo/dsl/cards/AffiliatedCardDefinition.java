@@ -4,21 +4,21 @@ import nl.kats.dabo.dsl.enums.Affiliation;
 
 public abstract class AffiliatedCardDefinition<T extends CardType> extends CardDefinition<T> {
 
-	protected AffiliatedCardDefinition(String title, String subtitle) {
-		super(title, subtitle);
-	}
+    Affiliation affiliation;
 
-	protected AffiliatedCardDefinition(String title) {
-		super(title);
-	}
+    protected AffiliatedCardDefinition(String title, String subtitle) {
+        super(title, subtitle);
+    }
 
-	Affiliation affiliation;
+    protected AffiliatedCardDefinition(String title) {
+        super(title);
+    }
 
-	public Affiliated<T> affiliation() {
-		return new Affiliated<>(this);
-	}
+    public Affiliated<T> affiliation() {
+        return new Affiliated<>(this);
+    }
 
-	public Affiliation getAffiliation() {
-		return affiliation;
-	}
+    public Affiliation getAffiliation() {
+        return affiliation;
+    }
 }

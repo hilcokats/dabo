@@ -3,7 +3,6 @@ package nl.kats.dabo.dsl;
 import nl.kats.dabo.dsl.cards.CardDefinition;
 
 import java.util.HashSet;
-import java.util.Set;
 import java.util.stream.Collectors;
 
 @SuppressWarnings({"serial", "rawtypes"})
@@ -12,7 +11,7 @@ public final class CardCatalog extends HashSet<CardDefinition> {
     public static CardCatalog CARDS = new CardCatalog();
 
     public CardDefinition get(String title) throws CardNotFoundException, NonUniqueCardNameException {
-        Set<CardDefinition> matchingCards = this.stream().filter(c -> c.getTitle().equals(title)).collect(Collectors.toSet());
+        var matchingCards = this.stream().filter(c -> c.getTitle().equals(title)).collect(Collectors.toSet());
         if (matchingCards.isEmpty()) {
             throw new CardNotFoundException();
         } else if (matchingCards.size() > 1) {

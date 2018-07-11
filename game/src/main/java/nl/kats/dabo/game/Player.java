@@ -38,13 +38,13 @@ public class Player implements EitherPlayer, Cards {
 	private final Hand hand;
 
 	private Integer points;
-	
+
 	private final nl.kats.dabo.game.Cards owned;
 	private final nl.kats.dabo.game.Cards commanded;
 
 	public Player(List<String> deckList) throws CardNotFoundException {
-	    CardList<DefinedCard> cards = new CardList<>();
-        for (String collectorsId : deckList) {
+        var cards = new CardList<>();
+        for (var collectorsId : deckList) {
             cards.add(CardFactory.getInstance(CardCatalog.CARDS.getByCollectorsId(collectorsId), this));
         }
 
@@ -67,7 +67,7 @@ public class Player implements EitherPlayer, Cards {
 
         this.points = 0;
 
-        for (int i=0; i<7; i++) {
+        for (var i = 0; i < 7; i++) {
             deck.top();
         }
     }
@@ -77,55 +77,55 @@ public class Player implements EitherPlayer, Cards {
 		this.points += points;
 		return true;
 	}
-	
-	@Override
+
+    @Override
 	public Optional<MissionCard> getAttemptedMission() {
         MissionCard attemptedMission = null; //TODO: implement
         return Optional.ofNullable(attemptedMission);
 	}
-	
-	@Override
+
+    @Override
 	public Optional<MissionCard> getCompletedMission() {
         MissionCard completedMission = null; //TODO: implement
         return Optional.ofNullable(completedMission);
 	}
-	
-	@Override
+
+    @Override
 	public Optional<DilemmaCard> getFacedDilemma() {
         DilemmaCard facedDilemma = null; //TODO: implement
         return Optional.ofNullable(facedDilemma);
 	}
-	
-	@Override
+
+    @Override
 	public Optional<DefinedCard> getDrawnCard() {
         DefinedCard drawnCard = null; //TODO: implement
         return Optional.ofNullable(drawnCard);
 	}
-	
-	@Override
+
+    @Override
 	public Optional<DefinedCard> getPlayedCard() {
         DefinedCard playedCard = null; //TODO: implement
         return Optional.ofNullable(playedCard);
 	}
-		
-	@Override
+
+    @Override
 	public Optional<DefinedCard> getDiscardedCard() {
         DefinedCard discardedCard = null; //TODO: implement
         return Optional.ofNullable(discardedCard);
 	}
-	
-	@Override
+
+    @Override
 	public Optional<DefinedCard> getRemovedCard() {
         DefinedCard removedCard = null; //TODO: implement
         return Optional.ofNullable(removedCard);
 	}
-	
-	@Override
+
+    @Override
 	public CardCollection<DefinedCard> getCommandedCards() {
 		return commanded;
 	}
-	
-	@Override
+
+    @Override
 	public CardCollection<DefinedCard> getOwnedCards() {
 		return owned;
 	}
@@ -207,4 +207,9 @@ public class Player implements EitherPlayer, Cards {
 	public CardCollection<EquipmentCard> equipment() {
 		return commanded.equipment();
 	}
+
+    @Override
+    public void restart() {
+        //TODO: implement
+    }
 }

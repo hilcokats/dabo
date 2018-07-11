@@ -10,10 +10,15 @@ import nl.kats.dabo.table.CardSet;
 
 public abstract class Card<T extends DefinedCard> extends CardSet<T> implements PlayableCard {
     private final CardDefinition definition;
+
     private final Player owner;
+
+    private boolean faceUp = false;
+
     private Player commander;
 
     protected Status status = Status.ACTIVE;
+
     protected Card<?> location;
 
     public Card(CardDefinition definition, Player player) {
@@ -49,7 +54,7 @@ public abstract class Card<T extends DefinedCard> extends CardSet<T> implements 
 
     @Override
     public boolean hasAnyKeyword(Keyword[] keywords) {
-        for (Keyword keyword : keywords) {
+        for (var keyword : keywords) {
             if (definition.getKeywords().contains(keyword)) {
                 return true;
             }
@@ -59,7 +64,7 @@ public abstract class Card<T extends DefinedCard> extends CardSet<T> implements 
 
     @Override
     public boolean hasAllKeywords(Keyword[] keywords) {
-        for (Keyword keyword : keywords) {
+        for (var keyword : keywords) {
             if (!definition.getKeywords().contains(keyword)) {
                 return false;
             }
@@ -74,11 +79,19 @@ public abstract class Card<T extends DefinedCard> extends CardSet<T> implements 
 
     @Override
     public boolean hasAnyStatus(Status[] statuses) {
-        for (Status status : statuses) {
+        for (var status : statuses) {
             if (hasStatus(status)) {
                 return true;
             }
         }
         return false;
+    }
+
+    public boolean isFaceUp() {
+        return faceUp;
+    }
+
+    public void setFaceUp(boolean faceUp) {
+        this.faceUp = faceUp;
     }
 }

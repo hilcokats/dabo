@@ -2,6 +2,7 @@ package nl.kats.dabo.dsl.cards;
 
 import nl.kats.dabo.dsl.cards.mission.MissionCard;
 import nl.kats.dabo.dsl.enums.Affiliation;
+import nl.kats.dabo.dsl.enums.Region;
 
 public interface AffiliatedCard extends DefinedCard {
 
@@ -9,6 +10,6 @@ public interface AffiliatedCard extends DefinedCard {
 
     boolean at(MissionCard mission);
 
-    boolean inRegion(String region);
+    boolean inRegion(Region region);
 
 }

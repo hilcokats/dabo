@@ -8,20 +8,20 @@ import nl.kats.dabo.dsl.enums.Skill;
 
 public interface PersonnelType extends MinimalType<PersonnelType> {
 
-	Affiliated<PersonnelType> affiliation();
-	
-	Taxoned<PersonnelType> species();
+    Affiliated<PersonnelType> affiliation();
 
-	PersonnelType commander(String shipName);
-	
-	PersonnelType interlink(Skill skill);
-	
-	Skilled<PersonnelType> skills();
+    Taxoned<PersonnelType> species();
 
-	PersonnelType integrity(int value);
+    PersonnelType commander(String shipName);
 
-	PersonnelType cunning(int value);
+    PersonnelType interlink(Skill skill);
 
-	PersonnelType strength(int value);
-	
+    Skilled<PersonnelType> skills();
+
+    PersonnelType integrity(int value);
+
+    PersonnelType cunning(int value);
+
+    PersonnelType strength(int value);
+
 }

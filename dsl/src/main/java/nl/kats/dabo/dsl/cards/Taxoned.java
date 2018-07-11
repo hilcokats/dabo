@@ -1,179 +1,179 @@
 package nl.kats.dabo.dsl.cards;
 
 public interface Taxoned<T extends CardType> {
-	
-	 Taxoned<T> acamarian();
 
-	 Taxoned<T> alien();
+    Taxoned<T> acamarian();
 
-	 Taxoned<T> andorian();
+    Taxoned<T> alien();
 
-	 Taxoned<T> android();
+    Taxoned<T> andorian();
 
-	 Taxoned<T> angosian();
+    Taxoned<T> android();
 
-	 Taxoned<T> atrean();
+    Taxoned<T> angosian();
 
-	 Taxoned<T> baku();
+    Taxoned<T> atrean();
 
-	 Taxoned<T> bajoran();
+    Taxoned<T> baku();
 
-	 Taxoned<T> bandi();
+    Taxoned<T> bajoran();
 
-	 Taxoned<T> barzan();
+    Taxoned<T> bandi();
 
-	 Taxoned<T> benzite();
+    Taxoned<T> barzan();
 
-	 Taxoned<T> betazoid();
+    Taxoned<T> benzite();
 
-	 Taxoned<T> bolian();
+    Taxoned<T> betazoid();
 
-	 Taxoned<T> borg();
+    Taxoned<T> bolian();
 
-	 Taxoned<T> breen();
+    Taxoned<T> borg();
 
-	 Taxoned<T> brekkian();
+    Taxoned<T> breen();
 
-	 Taxoned<T> bynar();
+    Taxoned<T> brekkian();
 
-	 Taxoned<T> cairn();
+    Taxoned<T> bynar();
 
-	 Taxoned<T> caldonian();
+    Taxoned<T> cairn();
 
-	 Taxoned<T> cardassian();
+    Taxoned<T> caldonian();
 
-	 Taxoned<T> chameloid();
+    Taxoned<T> cardassian();
 
-	 Taxoned<T> changeling();
+    Taxoned<T> chameloid();
 
-	 Taxoned<T> deltan();
+    Taxoned<T> changeling();
 
-	 Taxoned<T> denobulan();
+    Taxoned<T> deltan();
 
-	 Taxoned<T> dosi();
+    Taxoned<T> denobulan();
 
-	 Taxoned<T> elAurian();
+    Taxoned<T> dosi();
 
-	 Taxoned<T> elaysian();
+    Taxoned<T> elAurian();
 
-	 Taxoned<T> farian();
+    Taxoned<T> elaysian();
 
-	 Taxoned<T> ferengi();
+    Taxoned<T> farian();
 
-	 Taxoned<T> flaxian();
+    Taxoned<T> ferengi();
 
-	 Taxoned<T> gorn();
+    Taxoned<T> flaxian();
 
-	 Taxoned<T> grazerite();
+    Taxoned<T> gorn();
 
-	 Taxoned<T> hekaran();
+    Taxoned<T> grazerite();
 
-	 Taxoned<T> hirogen();
+    Taxoned<T> hekaran();
 
-	 Taxoned<T> hologram();
+    Taxoned<T> hirogen();
 
-	 Taxoned<T> human();
+    Taxoned<T> hologram();
 
-	 Taxoned<T> hupyrian();
+    Taxoned<T> human();
 
-	 Taxoned<T> idanian();
+    Taxoned<T> hupyrian();
 
-	 Taxoned<T> jemHadar();
+    Taxoned<T> idanian();
 
-	 Taxoned<T> karemma();
+    Taxoned<T> jemHadar();
 
-	 Taxoned<T> kellerun();
+    Taxoned<T> karemma();
 
-	 Taxoned<T> klingon();
+    Taxoned<T> kellerun();
 
-	 Taxoned<T> kobliad();
+    Taxoned<T> klingon();
 
-	 Taxoned<T> kreetassan();
+    Taxoned<T> kobliad();
 
-	 Taxoned<T> krenim();
+    Taxoned<T> kreetassan();
 
-	 Taxoned<T> kriosian();
+    Taxoned<T> krenim();
 
-	 Taxoned<T> ktarian();
+    Taxoned<T> kriosian();
 
-	 Taxoned<T> lethean();
+    Taxoned<T> ktarian();
 
-	 Taxoned<T> lurian();
+    Taxoned<T> lethean();
 
-	 Taxoned<T> malon();
+    Taxoned<T> lurian();
 
-	 Taxoned<T> mari();
+    Taxoned<T> malon();
 
-	 Taxoned<T> markalian();
+    Taxoned<T> mari();
 
-	 Taxoned<T> minaran();
+    Taxoned<T> markalian();
 
-	 Taxoned<T> norcadian();
+    Taxoned<T> minaran();
 
-	 Taxoned<T> ocampa();
+    Taxoned<T> norcadian();
 
-	 Taxoned<T> orion();
+    Taxoned<T> ocampa();
 
-	 Taxoned<T> ornaran();
+    Taxoned<T> orion();
 
-	 Taxoned<T> pakled();
+    Taxoned<T> ornaran();
 
-	 Taxoned<T> pendari();
+    Taxoned<T> pakled();
 
-	 Taxoned<T> rakhari();
+    Taxoned<T> pendari();
 
-	 Taxoned<T> ramatin();
+    Taxoned<T> rakhari();
 
-	 Taxoned<T> reman();
+    Taxoned<T> ramatin();
 
-	 Taxoned<T> risan();
+    Taxoned<T> reman();
 
-	 Taxoned<T> romulan();
+    Taxoned<T> risan();
 
-	 Taxoned<T> satarran();
+    Taxoned<T> romulan();
 
-	 Taxoned<T> solari();
+    Taxoned<T> satarran();
 
-	 Taxoned<T> suliban();
+    Taxoned<T> solari();
 
-	 Taxoned<T> tLani();
+    Taxoned<T> suliban();
 
-	 Taxoned<T> takaran();
+    Taxoned<T> tLani();
 
-	 Taxoned<T> talaxian();
+    Taxoned<T> takaran();
 
-	 Taxoned<T> tamarian();
+    Taxoned<T> talaxian();
 
-	 Taxoned<T> tanugan();
+    Taxoned<T> tamarian();
 
-	 Taxoned<T> tellarite();
+    Taxoned<T> tanugan();
 
-	 Taxoned<T> tiburonian();
+    Taxoned<T> tellarite();
 
-	 Taxoned<T> tosk();
+    Taxoned<T> tiburonian();
 
-	 Taxoned<T> trill();
+    Taxoned<T> tosk();
 
-	 Taxoned<T> ullian();
+    Taxoned<T> trill();
 
-	 Taxoned<T> ventaxian();
+    Taxoned<T> ullian();
 
-	 Taxoned<T> vorgon();
+    Taxoned<T> ventaxian();
 
-	 Taxoned<T> vorta();
+    Taxoned<T> vorgon();
 
-	 Taxoned<T> vulcan();
+    Taxoned<T> vorta();
 
-	 Taxoned<T> wadi();
+    Taxoned<T> vulcan();
 
-	 Taxoned<T> yridian();
+    Taxoned<T> wadi();
 
-	 Taxoned<T> zakdorn();
+    Taxoned<T> yridian();
 
-	 Taxoned<T> zalkonian();
+    Taxoned<T> zakdorn();
 
-	 Taxoned<T> zibalian();
+    Taxoned<T> zalkonian();
 
-	 T end();
+    Taxoned<T> zibalian();
+
+    T end();
 
 }

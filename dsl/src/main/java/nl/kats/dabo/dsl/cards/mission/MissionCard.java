@@ -5,7 +5,7 @@ import nl.kats.dabo.dsl.enums.Region;
 
 public interface MissionCard extends AffiliatedCard {
 
-	boolean isHeadquarters();
+    boolean isHeadquarters();
 
-	Region getRegion();
+    Region getRegion();
 }

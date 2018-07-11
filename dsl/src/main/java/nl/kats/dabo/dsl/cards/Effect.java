@@ -6,18 +6,14 @@ import nl.kats.dabo.dsl.enums.SelectionRestriction;
 public class Effect<T extends CardType> {
 
     private final T card;
-
-    private EffectRestriction restriction;
-    private EffectDuration duration;
-    private EffectNecessity necessity = EffectNecessity.MANDATORY;
-
-    private SelectionMethod selectionMethod = SelectionMethod.RANDOM_SELECTION;
     protected SelectionRestriction selectionRestriction = SelectionRestriction.EXACTLY;
     int selectionAmount = 1;
     Selection selection;
-
     Action action;
-
+    private EffectRestriction restriction;
+    private EffectDuration duration;
+    private EffectNecessity necessity = EffectNecessity.MANDATORY;
+    private SelectionMethod selectionMethod = SelectionMethod.RANDOM_SELECTION;
     private boolean order;
 
     private boolean copiesOnly;
@@ -26,6 +22,7 @@ public class Effect<T extends CardType> {
     private Effect<T> alternativeEffect;
 
     private boolean userTriggered = false;
+    private boolean beginEngagement = false;
 
     public Effect(T card) {
         this.card = card;
@@ -149,19 +146,21 @@ public class Effect<T extends CardType> {
     }
 
     public Effect<T> placeBeneath(String string) {
-//		TODO: implement
-//		this.selectionMethod = SelectionMethod.YOUR_CHOICE;
-//		this.selection = c -> c.your().missions();
-//		this.action = c -> c.selectedCards().stream().filter(t -> t.getName().equals(title)).findFirst().get().;
-//		this.necessity = EffectNecessity.OPTIONAL;
+        //		TODO: implement
+        //		this.selectionMethod = SelectionMethod.YOUR_CHOICE;
+        //		this.selection = c -> c.your().missions();
+        //		this.action = c -> c.selectedCards().stream().filter(t -> t.getName().equals(title)).findFirst().get
+        // ().;
+        //		this.necessity = EffectNecessity.OPTIONAL;
 
         return this;
     }
 
-    public void toBeginEngagement() {
+    public void beginEngagement() {
+        beginEngagement = true;
     }
 
-	/* Getters */
+    /* Getters */
 
     protected Action getAction() {
         return action;
@@ -209,5 +208,9 @@ public class Effect<T extends CardType> {
 
     protected boolean isUserTriggered() {
         return this.userTriggered;
+    }
+
+    protected boolean isBeginEngagement() {
+        return beginEngagement;
     }
 }

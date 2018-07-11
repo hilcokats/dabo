@@ -14,13 +14,14 @@ import nl.kats.dabo.dsl.context.You;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 public class Game implements ActionContext {
     private final List<EitherPlayer> players;
     private final List<Card> actions = new ArrayList<>();
 
-    Combat combat = null;
-    Engagement engagement = null;
+    private Combat combat = null;
+    private Engagement engagement = null;
 
     public Game(List<String> deck1, List<String> deck2) throws CardNotFoundException {
         this.players = new ArrayList<EitherPlayer>() {{
@@ -29,23 +30,37 @@ public class Game implements ActionContext {
         }};
     }
 
-    private Card current() {
-        return actions.isEmpty() ? null : actions.get(actions.size() - 1);
+    public void play(Card card) {
+        actions.add(card);
+    }
+
+    public void endTurn() {
+        actions.clear();
+    }
+
+    public void restart() {
+        actions.clear();
+        players.get(0).restart();
+        players.get(1).restart();
+    }
+
+    private Optional<Card> current() {
+        return actions.isEmpty() ? Optional.empty() : Optional.of(actions.get(actions.size() - 1));
     }
 
     @Override
     public DefinedCard self() {
-        return current();
+        return current().orElse(null);
     }
 
     @Override
     public DefinedCard trigger() {
-        return current();
+        return current().orElse(null);
     }
 
     @Override
     public You you() {
-        return (You) current().commander();
+        return current().isPresent() ? current().get().commander() : null;
     }
 
     @Override
@@ -55,7 +70,7 @@ public class Game implements ActionContext {
 
     @Override
     public Opponent opponent() {
-        return players.get(0).equals(you()) ? (Opponent) players.get(1) : (Opponent) players.get(0);
+        return players.get(0).equals(you()) ? players.get(1) : players.get(0);
     }
 
     @Override
@@ -75,7 +90,7 @@ public class Game implements ActionContext {
 
     @Override
     public CardCollection<DefinedCard> selectedCards() {
-        return ((CardCollection<DefinedCard>)trigger()).selectedCards();
+        return current().isPresent() ? current().get().selectedCards() : null;
     }
 
     @Override
