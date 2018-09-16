@@ -10,7 +10,7 @@ public final class IksKVort extends CardBuilder {
                 .collectorsId("1U399")
                 .cost(4)
                 .affiliation().klingon()
-                .staffingRequirements().staff().staff().staff().end()
+                .staffingRequirements().staff(3).end()
                 .classification().kVort()
                 .range(7)
                 .weapons(8)

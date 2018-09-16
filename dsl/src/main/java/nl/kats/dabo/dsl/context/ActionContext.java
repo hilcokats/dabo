@@ -63,6 +63,8 @@ public interface ActionContext {
      */
     CardCollection<DefinedCard> selectedCards();
 
+    boolean facingDilemma();
+
     boolean combatStarts();
 
     boolean engagementStarts();
@@ -70,4 +72,5 @@ public interface ActionContext {
     Engagement engagement();
 
     Combat combat();
+
 }

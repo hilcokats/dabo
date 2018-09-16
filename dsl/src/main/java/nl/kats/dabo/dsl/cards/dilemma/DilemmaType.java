@@ -11,6 +11,8 @@ public interface DilemmaType extends MinimalType<DilemmaType> {
 
     DilemmaType planet();
 
+    DilemmaType dual();
+
     DilemmaType consume(int i);
 
     @Override

@@ -9,8 +9,7 @@ public abstract class CardBuilderSupport {
 
     private Action addSkills(CardCollection<PersonnelCard> personnel) {
         return c -> {
-            //TODO
-            //            c.selectedCards().personnel().forEach(personnelCard -> personnelCard.adjustSkills(personnel
+            //TODO c.selectedCards().personnel().forEach(personnelCard -> personnelCard.adjustSkills(personnel
             // .getSkills()));
             return true;
         };

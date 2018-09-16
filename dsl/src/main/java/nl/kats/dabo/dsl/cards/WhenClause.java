@@ -48,6 +48,12 @@ public class WhenClause<T extends CardType> extends Conditional<T> {
         return this.effect;
     }
 
+    public Effect<T> facingDilemma() {
+        this.predicate = ActionContext::facingDilemma;
+        this.effect = new Effect<>(card);
+        return this.effect;
+    }
+
     public Effect<T> combatStarts() {
         this.predicate = ActionContext::combatStarts;
         this.effect = new Effect<>(card);

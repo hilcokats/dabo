@@ -35,6 +35,13 @@ public class DilemmaDefinition extends CardDefinition<DilemmaType> implements Di
     }
 
     @Override
+    public DilemmaType dual() {
+        planet = true;
+        space = true;
+        return this;
+    }
+
+    @Override
     public DilemmaType consume(int amount) {
         this.consume = amount;
         this.getKeywords().add(Keyword.CONSUME);

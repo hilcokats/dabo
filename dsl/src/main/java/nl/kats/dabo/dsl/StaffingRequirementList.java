@@ -5,6 +5,7 @@ import nl.kats.dabo.dsl.cards.StaffingRequirement;
 import nl.kats.dabo.dsl.enums.Icon;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public final class StaffingRequirementList<T extends CardType> extends ArrayList<Icon> implements
                                                                                        StaffingRequirement<T> {
@@ -19,13 +20,23 @@ public final class StaffingRequirementList<T extends CardType> extends ArrayList
 
     @Override
     public StaffingRequirement<T> command() {
-        add(Icon.COMMAND);
-        return this;
+        return command(1);
     }
 
     @Override
     public StaffingRequirement<T> staff() {
-        add(Icon.STAFF);
+        return staff(1);
+    }
+
+    @Override
+    public StaffingRequirement<T> command(int multiplier) {
+        addAll(Collections.nCopies(multiplier, Icon.COMMAND));
+        return this;
+    }
+
+    @Override
+    public StaffingRequirement<T> staff(int multiplier) {
+        addAll(Collections.nCopies(multiplier, Icon.STAFF));
         return this;
     }
 

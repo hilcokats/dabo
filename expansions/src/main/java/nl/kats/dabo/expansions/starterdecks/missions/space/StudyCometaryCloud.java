@@ -11,7 +11,8 @@ public final class StudyCometaryCloud extends CardBuilder {
                 .alphaQuadrant()
                 .affiliations().dominion().ferengi().klingon().nonAligned().romulan().end()
                 .space()
-                .requirements().astrometrics().navigation().programming().cunning().greaterThan(34).either().acquisition().or().security().end()
+                .requirements().astrometrics().navigation().programming().cunning().greaterThan(34)
+                .either().acquisition().or().security().end()
                 .span(2)
                 .lore("Cruses system: Collect samples of the unusual particles in this system’s Oort cloud. Conduct research on their military or commercial potential.");
     }

@@ -9,6 +9,7 @@ import nl.kats.dabo.dsl.context.ActionContext;
 import nl.kats.dabo.dsl.context.Combat;
 import nl.kats.dabo.dsl.context.EitherPlayer;
 import nl.kats.dabo.dsl.context.Engagement;
+import nl.kats.dabo.dsl.context.FacedDilemma;
 import nl.kats.dabo.dsl.context.Opponent;
 import nl.kats.dabo.dsl.context.You;
 
@@ -22,6 +23,7 @@ public class Game implements ActionContext {
 
     private Combat combat = null;
     private Engagement engagement = null;
+    private FacedDilemma facedDilemma = null;
 
     public Game(List<String> deck1, List<String> deck2) throws CardNotFoundException {
         this.players = new ArrayList<EitherPlayer>() {{
@@ -94,21 +96,18 @@ public class Game implements ActionContext {
     }
 
     @Override
+    public boolean facingDilemma() {
+        return facedDilemma != null;
+    }
+
+    @Override
     public boolean combatStarts() {
-        if (combat == null) {
-            combat = new CombatImpl();
-            return true;
-        }
-        return false;
+        return combat != null && combat.justStarted();
     }
 
     @Override
     public boolean engagementStarts() {
-        if (engagement == null) {
-            engagement = new EngagementImpl();
-            return true;
-        }
-        return false;
+        return engagement != null && engagement.justStarted();
     }
 
     @Override

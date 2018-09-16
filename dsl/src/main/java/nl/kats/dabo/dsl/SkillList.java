@@ -5,6 +5,7 @@ import nl.kats.dabo.dsl.cards.Skilled;
 import nl.kats.dabo.dsl.enums.Skill;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public final class SkillList<T extends CardType> extends ArrayList<Skill> implements Skilled<T> {
 
@@ -18,139 +19,254 @@ public final class SkillList<T extends CardType> extends ArrayList<Skill> implem
 
     @Override
     public Skilled<T> acquisition() {
-        add(Skill.ACQUISITION);
-        return this;
+        return acquisition(1);
     }
 
     @Override
     public Skilled<T> anthropology() {
-        add(Skill.ANTHROPOLOGY);
-        return this;
+        return anthropology(1);
     }
 
     @Override
     public Skilled<T> archaeology() {
-        add(Skill.ARCHAEOLOGY);
-        return this;
+        return archaeology(1);
     }
 
     @Override
     public Skilled<T> astrometrics() {
-        add(Skill.ASTROMETRICS);
-        return this;
+        return astrometrics(1);
     }
 
     @Override
     public Skilled<T> biology() {
-        add(Skill.BIOLOGY);
-        return this;
+        return biology(1);
     }
 
     @Override
     public Skilled<T> diplomacy() {
-        add(Skill.DIPLOMACY);
-        return this;
+        return diplomacy(1);
     }
 
     @Override
     public Skilled<T> engineer() {
-        add(Skill.ENGINEER);
-        return this;
+        return engineer(1);
     }
 
     @Override
     public Skilled<T> exobiology() {
-        add(Skill.EXOBIOLOGY);
-        return this;
+        return exobiology(1);
     }
 
     @Override
     public Skilled<T> geology() {
-        add(Skill.GEOLOGY);
-        return this;
+        return geology(1);
     }
 
     @Override
     public Skilled<T> honor() {
-        add(Skill.HONOR);
-        return this;
+        return honor(1);
     }
 
     @Override
     public Skilled<T> intelligence() {
-        add(Skill.INTELLIGENCE);
-        return this;
+        return intelligence(1);
     }
 
     @Override
     public Skilled<T> law() {
-        add(Skill.LAW);
-        return this;
+        return law(1);
     }
 
     @Override
     public Skilled<T> leadership() {
-        add(Skill.LEADERSHIP);
-        return this;
+        return leadership(1);
     }
 
     @Override
     public Skilled<T> medical() {
-        add(Skill.MEDICAL);
-        return this;
+        return medical(1);
     }
 
     @Override
     public Skilled<T> navigation() {
-        add(Skill.NAVIGATION);
-        return this;
+        return navigation(1);
     }
 
     @Override
     public Skilled<T> officer() {
-        add(Skill.OFFICER);
-        return this;
+        return officer(1);
     }
 
     @Override
     public Skilled<T> physics() {
-        add(Skill.PHYSICS);
-        return this;
+        return physics(1);
     }
 
     @Override
     public Skilled<T> programming() {
-        add(Skill.PROGRAMMING);
-        return this;
+        return programming(1);
     }
 
     @Override
     public Skilled<T> science() {
-        add(Skill.SCIENCE);
-        return this;
+        return science(1);
     }
 
     @Override
     public Skilled<T> security() {
-        add(Skill.SECURITY);
-        return this;
+        return security(1);
     }
 
     @Override
     public Skilled<T> telepathy() {
-        add(Skill.TELEPATHY);
-        return this;
+        return telepathy(1);
     }
 
     @Override
     public Skilled<T> transporters() {
-        add(Skill.TRANSPORTERS);
-        return this;
+        return transporters(1);
     }
 
     @Override
     public Skilled<T> treachery() {
-        add(Skill.TREACHERY);
+        return treachery(1);
+    }
+
+    @Override
+    public Skilled<T> acquisition(int multiplier) {
+        addAll(Collections.nCopies(multiplier, Skill.ACQUISITION));
+        return this;
+    }
+
+    @Override
+    public Skilled<T> anthropology(int multiplier) {
+        addAll(Collections.nCopies(multiplier, Skill.ANTHROPOLOGY));
+        return this;
+    }
+
+    @Override
+    public Skilled<T> archaeology(int multiplier) {
+        addAll(Collections.nCopies(multiplier, Skill.ARCHAEOLOGY));
+        return this;
+    }
+
+    @Override
+    public Skilled<T> astrometrics(int multiplier) {
+        addAll(Collections.nCopies(multiplier, Skill.ASTROMETRICS));
+        return this;
+    }
+
+    @Override
+    public Skilled<T> biology(int multiplier) {
+        addAll(Collections.nCopies(multiplier, Skill.BIOLOGY));
+        return this;
+    }
+
+    @Override
+    public Skilled<T> diplomacy(int multiplier) {
+        addAll(Collections.nCopies(multiplier, Skill.DIPLOMACY));
+        return this;
+    }
+
+    @Override
+    public Skilled<T> engineer(int multiplier) {
+        addAll(Collections.nCopies(multiplier, Skill.ENGINEER));
+        return this;
+    }
+
+    @Override
+    public Skilled<T> exobiology(int multiplier) {
+        addAll(Collections.nCopies(multiplier, Skill.EXOBIOLOGY));
+        return this;
+    }
+
+    @Override
+    public Skilled<T> geology(int multiplier) {
+        addAll(Collections.nCopies(multiplier, Skill.GEOLOGY));
+        return this;
+    }
+
+    @Override
+    public Skilled<T> honor(int multiplier) {
+        addAll(Collections.nCopies(multiplier, Skill.HONOR));
+        return this;
+    }
+
+    @Override
+    public Skilled<T> intelligence(int multiplier) {
+        addAll(Collections.nCopies(multiplier, Skill.INTELLIGENCE));
+        return this;
+    }
+
+    @Override
+    public Skilled<T> law(int multiplier) {
+        addAll(Collections.nCopies(multiplier, Skill.LAW));
+        return this;
+    }
+
+    @Override
+    public Skilled<T> leadership(int multiplier) {
+        addAll(Collections.nCopies(multiplier, Skill.LEADERSHIP));
+        return this;
+    }
+
+    @Override
+    public Skilled<T> medical(int multiplier) {
+        addAll(Collections.nCopies(multiplier, Skill.MEDICAL));
+        return this;
+    }
+
+    @Override
+    public Skilled<T> navigation(int multiplier) {
+        addAll(Collections.nCopies(multiplier, Skill.NAVIGATION));
+        return this;
+    }
+
+    @Override
+    public Skilled<T> officer(int multiplier) {
+        addAll(Collections.nCopies(multiplier, Skill.OFFICER));
+        return this;
+    }
+
+    @Override
+    public Skilled<T> physics(int multiplier) {
+        addAll(Collections.nCopies(multiplier, Skill.PHYSICS));
+        return this;
+    }
+
+    @Override
+    public Skilled<T> programming(int multiplier) {
+        addAll(Collections.nCopies(multiplier, Skill.PROGRAMMING));
+        return this;
+    }
+
+    @Override
+    public Skilled<T> science(int multiplier) {
+        addAll(Collections.nCopies(multiplier, Skill.SCIENCE));
+        return this;
+    }
+
+    @Override
+    public Skilled<T> security(int multiplier) {
+        addAll(Collections.nCopies(multiplier, Skill.SECURITY));
+        return this;
+    }
+
+    @Override
+    public Skilled<T> telepathy(int multiplier) {
+        addAll(Collections.nCopies(multiplier, Skill.TELEPATHY));
+        return this;
+    }
+
+    @Override
+    public Skilled<T> transporters(int multiplier) {
+        addAll(Collections.nCopies(multiplier, Skill.TRANSPORTERS));
+        return this;
+    }
+
+    @Override
+    public Skilled<T> treachery(int multiplier) {
+        addAll(Collections.nCopies(multiplier, Skill.TREACHERY));
         return this;
     }
 

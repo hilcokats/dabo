@@ -10,7 +10,7 @@ public final class IksVorCha extends CardBuilder {
                 .collectorsId("1S403")
                 .cost(5)
                 .affiliation().klingon()
-                .staffingRequirements().command().staff().staff().staff().end()
+                .staffingRequirements().command().staff(3).end()
                 .classification().vorcha()
                 .range(8)
                 .weapons(9)

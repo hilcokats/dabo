@@ -9,8 +9,7 @@ public final class EquipmentMalfunction extends CardBuilder {
         dilemma("Equipment Malfunction")
                 .collectorsId("1S25")
                 .cost(1)
-                .planet()
-                .space()
+                .dual()
                 .when().faced().select(c -> c.your().equipment()).perform(moveSelectedToOwnersHand()).end()
                 .lore("Heh... must be the radiation");
     }
